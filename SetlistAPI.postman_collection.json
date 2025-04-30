@@ -1,0 +1,675 @@
+{
+	"info": {
+		"_postman_id": "6454ac27-9036-4153-8eb9-39e62a18c7be",
+		"name": "SetlistAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42832872"
+	},
+	"item": [
+		{
+			"name": "Search for artist Spotify",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/spotify/search-artist?artist=Kelsea Ballerini",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"spotify",
+						"search-artist"
+					],
+					"query": [
+						{
+							"key": "artist",
+							"value": "Kelsea Ballerini"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search for song Spotify",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/spotify/search-song?song=Baggage",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"spotify",
+						"search-song"
+					],
+					"query": [
+						{
+							"key": "song",
+							"value": "Baggage"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search song with artist Spotify",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/spotify/search-song-with-artist?song=Baggage",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"spotify",
+						"search-song-with-artist"
+					],
+					"query": [
+						{
+							"key": "song",
+							"value": "Baggage"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search artist with songs Spotify",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/spotify/search-artist-songs?artist=Kelsea Ballerini",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"spotify",
+						"search-artist-songs"
+					],
+					"query": [
+						{
+							"key": "artist",
+							"value": "Kelsea Ballerini"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET artists from mongodb",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/artists",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"artists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit artist",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"artistName\": \"Test1\",\n  \"artistImage\": \"image-url.jpg\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/artists/67a38747ae5b51c596451e66",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"artists",
+						"67a38747ae5b51c596451e66"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add artist",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"artistName\": \"New Artist 4\",\n  \"artistImage\": \"image.jpg\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/artists",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"artists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET songs",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/songs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"songs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add song",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"songTitle\": \"Test Song\",\n  \"artistIDs\": [\"67acc5a93202a073d0b26e0a\"],  \n  \"audio\": \"audio.mp3\",\n  \"lyrics\": \"lyrics.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/songs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"songs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get users",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get setlists",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/setlists",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"setlists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add setlist",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"setlistName\": \"New Tour\",\n  \"setlistImage\": \"imageName.jpg\",\n  \"createdBy\": \"67aa58c674836577c31ce62b\",  // ObjectId of the user (createdBy)\n  \"tourName\": \"Tour Name\",\n  \"headlinerName\": \"67acc5a93202a073d0b26e0a\",  // ObjectId of the headliner (Artist)\n  \"date_location\": [\n    {\n      \"date\": \"2025-03-24T00:00:00.000Z\",  // Date in ISO format\n      \"city\": \"New York\"\n    }\n  ],\n  \"openerNames\": [\n    {\n      \"name\": \"67acc6f73202a073d0b26e0e\",  // ObjectId of the opener (Artist)\n      \"songs\": [\n        \"67acc7093202a073d0b26e0f\",  // ObjectId of a song\n        \"67acc7093202a073d0b26e0f\"   // ObjectId of another song\n      ]\n    },\n    {\n      \"name\": \"67a38747ae5b51c596451e66\",  // ObjectId of another opener (Artist)\n      \"songs\": [\n        \"67acc7093202a073d0b26e0f\"  // ObjectId of a song\n      ]\n    }\n  ],\n  \"headlinerSongIDs\": [\n    \"67acc5bf3202a073d0b26e0b\",  // ObjectId of a headliner song\n    \"67acc6033202a073d0b26e0c\"   // ObjectId of another headliner song\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/setlists",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"setlists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get song by songID",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/songs/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"songs",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "67acc7093202a073d0b26e0f"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"testuser@example.com\",\n  \"name\": \"Test User\",\n  \"password\": \"password123\",\n  \"favoriteSetlists\": []\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get artist by artistID",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/artists/67a38747ae5b51c596451e66",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"artists",
+						"67a38747ae5b51c596451e66"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get setlist with headliner and opener names",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/setlists/with-artists",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"setlists",
+						"with-artists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get song by title",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/songs/title/Patterns",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"songs",
+						"title",
+						"Patterns"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get artist by name",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/artists/name/:artistName",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"artists",
+						"name",
+						":artistName"
+					],
+					"variable": [
+						{
+							"key": "artistName",
+							"value": "Kelsea Ballerini"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get setlist by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/setlists/67acc6213202a073d0b26e0d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"setlists",
+						"67acc6213202a073d0b26e0d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user by id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/users/67a386f9ae5b51c596451e65",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"67a386f9ae5b51c596451e65"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get setlist by createdBy user id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/setlists/user/67a386f9ae5b51c596451e65",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"setlists",
+						"user",
+						"67a386f9ae5b51c596451e65"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get or Create Artist",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Kelsea Ballerini\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/artists/getOrCreate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"artists",
+						"getOrCreate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get or Create Song",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"songTitle\": \"Dibs\",\n  \"artistName\": \"Kelsea Ballerini\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/songs/getOrAddSong",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"songs",
+						"getOrAddSong"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add or remove from favorites with setlist id and user id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"favoriteStatus\": true,\n  \"userId\": \"67a386f9ae5b51c596451e65\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/setlists/6804320cb3335c044d8bcd03/favorite",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"setlists",
+						"6804320cb3335c044d8bcd03",
+						"favorite"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
